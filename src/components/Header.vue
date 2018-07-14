@@ -7,7 +7,7 @@
           <nav>
             <a href="/">首页</a>
             <a href="/wiki">Wiki</a>
-            <a href="/resource">资源</a>
+            <a href="/explore">Explore</a>
           </nav>
         </div>
         <div class="header-right">
@@ -17,7 +17,7 @@
           </form>
           <nav>
             <a href="todo/create-topic">发布话题</a>
-            <a href="todo/user/todo">todo</a>
+            <a href="todo/user/todo">admin</a>
             <a href="todo/logout">退出</a>
             <a href="todo/register">注册</a>
             <a href="todo/login">登录</a>
@@ -48,6 +48,7 @@
   </div>
 </template>
 <script>
+
 export default {
   name: 'app-header'
 }

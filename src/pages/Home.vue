@@ -17,21 +17,21 @@
           </div>
         </div>
         <div class="panel-content">
-          <div class="topic">
+          <div v-for="(topic, index) in topicList" :key="index" class="topic">
             <div class="avatar">
               <a href="/user/admin"><img src="/static/images/avatar.jpg"></a>
             </div>
             <div class="info">
               <dl>
                 <dt>
-                  <span class="tag tag-category">招聘</span>
-                  <a href="/topic/901561008e02eaa70f0f12e4e3afa670">您尚未开通安全预警</a>
+                  <span class="tag tag-category">{{topic.category_name_cn}}</span>
+                  <a :href="'/topic/' + topic.id">{{topic.title}}</a>
                 </dt>
                 <dd>
-                  <span class="item"><a href="/user/admin">admin</a>
-                  发布于 <span class="datetime-ago">5 个月前</span></span>
-                  <span class="item">• <i class="reply-count">1</i> 个回复</span>
-                  <span class="item">• <i class="view-count">42</i> 次浏览</span>
+                  <span class="item"><a :href="'/user/' + topic.user_id">{{topic.username}}</a>
+                  发布于 <span class="datetime-ago">{{topic.rtime}}</span></span>
+                  <span class="item">• <i class="reply-count">{{topic.comment_count}}</i> 个回复</span>
+                  <span class="item">• <i class="view-count">{{topic.view_count}}</i> 次浏览</span>
 
                   <!-- TODO 最后一个回复该问题的人 -->
                   <span class="item right">最后由 <a href="/static/images/avatar.jpg">
@@ -42,13 +42,13 @@
               </dl>
             </div>
           </div>
+
+          <div v-if="topicList.length === 0" class="no-data">
+            暂无数据
+          </div>
         </div>
         <div class="panel-footer">
-          <div class="pagination">
-            <a class="first disabled" href="/topics/job?page=1">«</a>
-            <a href="/topics/job?page=1" class="active disabled">1</a>
-            <a class="last disabled" href="/topics/job?page=1">»</a>
-          </div>
+          <app-pagination :current-page="this.currentPage"></app-pagination>
         </div>
       </div>
     </div>
@@ -58,47 +58,37 @@
 <script>
 import config from '../config'
 import Aside from '../components/Aside'
+import Pagination from '../components/Pagination'
 
 export default {
   name: 'page-home',
   components: {
-    'app-aside': Aside
+    'app-aside': Aside,
+    'app-pagination': Pagination
   },
   mounted: function () {
-    let data = { page_id: 1}
-    fetch(config.urlPrefix + '/api/theme_list/page_id',{
-      body: JSON.stringify(data),
+    let data = {page_id: this.currentPage}
+    fetch(config.urlPrefix + '/api/theme_list/page_id', {
+      method: 'POST',
+      mode: 'cors',
       headers: {
         'content-type': 'application/json'
       },
-      method: 'POST',
-      mode: 'cors'
-    }).then(response => response.json())
-      .then(json => {
-        this.page_count = json.theme_page_count
-        this.half_count = Math.ceil(json.theme_page_count/2)
-        this.theme_list = json.theme_list
-        this.categorys = json.categorys
+      body: JSON.stringify(data)
+    }).then(res => res.json())
+      .then(data => {
+        this.topicList = data.theme_list
+        this.categories = data.categorys
       })
-      .catch((e) => {
-        console.log(e)
+      .catch((err) => {
+        console.log(err)
       })
-
-    fetch(config.urlPrefix + "/api/home/bestperson",{
-      method: 'GET',
-      mode: 'cors'
-    }).then(response => response.json())
-      .then(json => {
-        // this.theme_list = json.theme_list
-        // this.page_count = json.theme_page_count
-        // this.half_count = Math.ceil(json.theme_page_count/2)
-        // this.categorys = json.categorys
-        this.new_best = json.new_best
-        this.all_best = json.all_best
-      })
-      .catch((e) => {
-        console.log(e)
-      })
+  },
+  data: function () {
+    return {
+      currentPage: 1,
+      topicList: []
+    }
   }
 }
 </script>

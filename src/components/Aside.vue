@@ -6,10 +6,10 @@
         <h4>话题推荐</h4>
       </div>
       <div class="panel-content">
-        <ul class="info-list limit-text">
+        <ul v-if="newBest.length > 0" class="info-list limit-text">
           <li><a href="todo">todo</a></li>
         </ul>
-        <div class="no-data">暂无其它话题</div>
+        <div v-if="newBest.length === 0"  class="no-data">暂无推荐的话题</div>
       </div>
     </div>
 
@@ -20,18 +20,23 @@
       <div class="panel-content">
         <ul class="info-list">
           <li>
+            <a href="https://rust.cc" rel="nofollow" target="_blank" style="font-size:22px;font-weight: bold;">
+              rust.cc
+            </a>
+          </li>
+          <li>
             <a href="https://ruby-china.org" rel="nofollow" target="_blank">
-              <img src="/images/friendly/ruby.png">
+              <img src="/static/images/ruby.png">
             </a>
           </li>
           <li>
             <a href="https://cnodejs.org" rel="nofollow" target="_blank">
-              <img src="/images/friendly/cnode.png">
+              <img src="/static/images/cnode.png">
             </a>
           </li>
           <li>
             <a href="https://gocn.io" rel="nofollow" target="_blank">
-              <img src="/images/friendly/gocn.png">
+              <img src="/static/images/gocn.png">
             </a>
           </li>
         </ul>
@@ -44,9 +49,9 @@
       </div>
       <div class="panel-content">
         <ul class="info-list">
-          <li>社区会员: todo 人</li>
-          <li>帖子数: todo 个</li>
-          <li>回帖数: todo 条</li>
+          <li>社区会员: n 人</li>
+          <li>帖子数: n 个</li>
+          <li>回帖数: n 条</li>
         </ul>
       </div>
     </div>
@@ -54,8 +59,28 @@
   </aside>
 </template>
 <script>
+import config from '../config'
 export default {
-  name: 'app-aside'
+  name: 'app-aside',
+  mounted: function () {
+    fetch(config.urlPrefix + '/api/home/bestperson', {
+      method: 'GET',
+      mode: 'cors'
+    }).then(res => res.json())
+      .then(data => {
+        this.newBest = data.new_best
+        this.allBest = data.all_best
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  },
+  data: function () {
+    return {
+      newBest: [],
+      allBest: []
+    }
+  }
 }
 </script>
 <style lang="scss">

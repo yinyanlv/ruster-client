@@ -1,25 +1,144 @@
 <template>
   <div class="pagination" id="app-pagination">
-    <!--<a class="first {{#if pagination.is_first_page_disabled}}disabled{{/if}}" href="{{pagination.base_url}}{{pagination.first_page}}">«</a>-->
-    <!--{{#if pagination.is_show_prev_ellipsis}}-->
-    <!--<a class="ellipsis">...</a>-->
-    <!--{{/if}}-->
-    <!--{{#each pagination.page_list}}-->
-    <!--<a href="{{../pagination.base_url}}{{this.page}}" {{#if this.is_active}}class="active disabled"{{/if}}>{{this.page}}</a>-->
-    <!--{{/each}}-->
-    <!--{{#if pagination.is_show_next_ellipsis}}-->
-    <!--<a class="ellipsis">...</a>-->
-    <!--{{/if}}-->
-    <!--<a class="last {{#if pagination.is_last_page_disabled}}disabled{{/if}}" href="{{pagination.base_url}}{{pagination.last_page}}">»</a>-->
+    <a class="first" :class="{disabled: pagination.isFirstPageDisabled}" :href="pagination.baseUrl + '/' + pagination.firstPage">«</a>
+    <a class="ellipsis" v-if="pagination.isShowPrevEllipsis">...</a>
+    <a v-for="item in pagination.pageList" :key="item.page" :href="pagination.baseUrl + '/' + item.page" :class="{active: item.isActive, disabled: item.isActive}">{{item.page}}</a>
+    <a v-if="pagination.isShowNextEllipsis" class="ellipsis">...</a>
+    <a class="last" :class="{disabled: pagination.isLastPageDisabled}" :href="pagination.baseUrl + '/' + pagination.lastPage">»</a>
   </div>
 </template>
 <script>
+const RECORDS_COUNT_PER_PAGE = 15
+
 export default {
-  name: 'app-pagination'
+  name: 'app-pagination',
+  props: {
+    currentPage: {
+      type: Number,
+      default: 1
+    },
+    total: {
+      type: Number,
+      default: 0
+    },
+    baseUrl: {
+      type: String,
+      default: ''
+    }
+  },
+  computed: {
+    pagination: function () {
+      let curPage = this.currentPage
+      let total = this.total
+      let baseUrl = this.baseUrl
+      let delta = 1
+
+      if (total % RECORDS_COUNT_PER_PAGE === 0) {
+        delta = 0
+      }
+
+      let pageCount = total / RECORDS_COUNT_PER_PAGE + delta
+      let isShowPrevEllipsis = true
+      let isShowNextEllipsis = true
+      let isFirstPageDisabled = false
+      let isLastPageDisabled = false
+      let pageList = []
+
+      if (pageCount < 6) {
+        isShowPrevEllipsis = false
+        isShowNextEllipsis = false
+      } else {
+        if (curPage < 4) {
+          isShowPrevEllipsis = false
+        }
+        if (curPage > pageCount - 3) {
+          isShowNextEllipsis = false
+        }
+      }
+
+      if (curPage === 1) {
+        isFirstPageDisabled = true
+      }
+
+      if (curPage === pageCount) {
+        isLastPageDisabled = true
+      }
+
+      if (pageCount < 6) {
+        // 总页数小于等于5时
+        for (let i = 1; i < pageCount + 1; i++) {
+          if (i === curPage) {
+            pageList.push({
+              page: i,
+              isActive: true
+            })
+          } else {
+            pageList.push({
+              page: i
+            })
+          }
+        }
+      } else if (curPage < 4) {
+        // 总页数大于5，当前页码小于等于3时，隐藏左侧ellipsis
+        for (let i = 1; i < 6; i++) {
+          if (i === curPage) {
+            pageList.push({
+              page: i,
+              isActive: true
+            })
+          } else {
+            pageList.push({
+              page: i
+            })
+          }
+        }
+      } else if (curPage > pageCount - 3) {
+        // 总页数大于5，当前页码距离总页数小于等于3时，隐藏右侧ellipsis
+        for (let i = pageCount - 4; i < pageCount + 1; i++) {
+          if (i === curPage) {
+            pageList.push({
+              page: i,
+              isActive: true
+            })
+          } else {
+
+            pageList.push({
+              page: i
+            })
+          }
+        }
+      } else {
+        // 当前页码的左右两侧各放置两个页码
+        for (let i = curPage - 2; i < curPage + 3; i++) {
+          if (i === curPage) {
+            pageList.push({
+              page: i,
+              isActive: true
+            })
+          } else {
+            pageList.push({
+              page: i
+            })
+          }
+        }
+      }
+
+      return {
+        baseUrl: baseUrl,
+        isShowPrevEllipsis: isShowPrevEllipsis,
+        isShowNextEllipsis: isShowNextEllipsis,
+        pageList: pageList,
+        isFirstPageDisabled: isFirstPageDisabled,
+        isLastPageDisabled: isLastPageDisabled,
+        firstPage: 1,
+        lastPage: pageCount
+      }
+    }
+  }
 }
 </script>
 <style lang="scss">
-@import "../assets/styles/scss/sdk/index"
+@import "../assets/styles/scss/sdk/index";
 
 .pagination {
   padding: 1rem;
