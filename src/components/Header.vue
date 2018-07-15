@@ -16,11 +16,11 @@
             <a class="btn btn-search" href="javascript:;"><i class="fa fa-search"></i></a>
           </form>
           <nav>
-            <a href="todo/create-topic">发布话题</a>
-            <a href="todo/user/todo">admin</a>
-            <a href="todo/logout">退出</a>
-            <a href="todo/register">注册</a>
-            <a href="todo/login">登录</a>
+            <a href="/create-topic">发布话题</a>
+            <a href="/user/admin">admin</a>
+            <a href="/logout">退出</a>
+            <a href="/register">注册</a>
+            <a href="/login">登录</a>
           </nav>
         </div>
       </div>
