@@ -1,5 +1,5 @@
 <template>
-  <div id="page-login">
+  <div>
     <div class="block-main">
       <div class="panel">
         <div class="panel-header">

@@ -3,9 +3,9 @@
 </template>
 
 <script>
-    export default {
-        name: "Detail"
-    }
+export default {
+  name: "Detail"
+}
 </script>
 
 <style scoped>

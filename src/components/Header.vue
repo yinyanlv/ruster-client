@@ -3,7 +3,7 @@
     <header class="frame-header">
       <div class="frame-wrapper">
         <div class="header-left">
-          <a class="logo" href="todo"><img src="../assets/images/logo.png"><span class="site-name">Ruster</span></a>
+          <a class="logo" href="/"><img src="../assets/images/logo.png"><span class="site-name">Ruster</span></a>
           <nav>
             <a href="/">首页</a>
             <a href="/wiki">Wiki</a>

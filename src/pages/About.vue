@@ -1,13 +1,8 @@
 <template>
 
 </template>
-
 <script>
 export default {
-  name: "Edit"
+  name: 'page-about'
 }
 </script>
-
-<style scoped>
-
-</style>

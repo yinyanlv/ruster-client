@@ -3,9 +3,9 @@
 </template>
 
 <script>
-    export default {
-        name: "Wiki"
-    }
+export default {
+  name: 'page-wiki'
+}
 </script>
 
 <style scoped>

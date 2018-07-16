@@ -1,11 +1,10 @@
 <template>
-
 </template>
 
 <script>
-    export default {
-        name: "Explore"
-    }
+export default {
+  name: 'page-explore'
+}
 </script>
 
 <style scoped>
