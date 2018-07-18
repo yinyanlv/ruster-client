@@ -607,29 +607,43 @@ body {
   }
 }
 
+
 .user-info-wrapper {
-  padding: 1rem;
+  background: #fff;
+  position: relative;
+  margin-bottom: 1.5rem;
+
+  &:before{
+    content: '';
+    display: block;
+    height: 10rem;
+    background: $lightest-font-color;
+    z-index: 0;
+  }
 
   .user-info {
+    padding: 2rem 2rem 1rem;
     font-size: 1.4rem;
     color: $font-color;
 
     .avatar {
       display: inline-block;
-      width: 10rem;
-      height: 10rem;
+      width: 14rem;
+      height: 14rem;
       float: left;
+      position: relative;
+      top: -7rem;
 
       img {
         vertical-align: top;
-        width: 10rem;
-        height: 10rem;
+        width: 14rem;
+        height: 14rem;
         @include borderRadius(.8rem);
       }
     }
 
     ul {
-      padding-left: 11rem;
+      padding-left: 16rem;
     }
 
     li {

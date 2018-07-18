@@ -49,10 +49,10 @@ export default new Router({
       path: '/user/:id',
       component: UserDetail
     }, {
-      path: '/user-edit/:id',
+      path: '/user/edit/:id',
       component: UserEdit
     }, {
-      path: '/user-change-password/:id',
+      path: '/user/change-password/:id',
       component: UserChangePassword
     }, {
       path: '/wiki',
