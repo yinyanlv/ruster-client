@@ -20,30 +20,4 @@ export default {
 <style lang="scss">
 @import "../assets/styles/scss/sdk/index";
 
-.frame-wrapper {
-  width: 90%;
-  min-width: 98rem;
-  max-width: 150rem;
-  margin: 0 auto;
-  display: table;
-  table-layout: fixed;
-
-  &:after {
-    content: '';
-    width: 100%;
-    display: block;
-    clear: both;
-  }
-}
-
-.frame-content {
-  padding: 6.5rem 0 0;
-  width: 100%;
-
-  .block-main {
-    display: table-cell;
-    vertical-align: top;
-    width:100%;
-  }
-}
 </style>
