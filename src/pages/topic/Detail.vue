@@ -1,5 +1,5 @@
 <template>
-  <div class="page-topic-detail">
+  <section class="page-topic-detail">
     <div class="block-main">
       <div class="panel">
         <article class="article">
@@ -113,7 +113,7 @@
       </div>
     </div>
     <app-aside></app-aside>
-  </div>
+  </section>
 </template>
 <script>
 import 'highlight.js'

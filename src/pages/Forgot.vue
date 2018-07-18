@@ -1,15 +1,15 @@
 <template>
-  <div>
+  <section>
     <div class="block-main">
       <div class="panel">
         <div class="panel-header">
           <app-crumbs :text="'忘记密码'"></app-crumbs>
         </div>
         <div class="panel-content">
-          <div class="frame-form" id="form-reset-password">
+          <div class="frame-form">
             <div class="input-line">
               <label><span class="required">*</span>邮箱：</label>
-              <div class="input-wrapper"><input type="email" name="email" placeholder="请输入您注册时所使用的邮箱" data-required="{'value': true, 'message': '邮箱为必填项'}" data-pattern="{'value': '^([a-zA-Z0-9_-]+\\.?)+@[a-zA-Z0-9_-]+(\\.[a-zA-Z0-9_-]+)+$', 'message': '您输入的邮箱格式不正确'}"></div>
+              <div class="input-wrapper"><input type="email" name="email" placeholder="请输入您注册时所使用的邮箱" /></div>
             </div>
             <div class="error-line" id="error-line">
               <div class="error-wrapper">
@@ -26,7 +26,7 @@
       </div>
     </div>
     <app-aside></app-aside>
-  </div>
+  </section>
 </template>
 <script>
 import Aside from '../components/Aside'

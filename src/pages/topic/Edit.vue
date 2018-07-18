@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section>
     <div class="block-main">
       <div class="panel">
         <div class="panel-header">
@@ -31,7 +31,7 @@
       </div>
     </div>
     <app-aside></app-aside>
-  </div>
+  </section>
 </template>
 
 <script>

@@ -339,7 +339,6 @@ body {
 
 .back-to-top {
   position: fixed;
-  display: none;
   right: 0;
   top: 60%;
   width: 2.8rem;
@@ -401,13 +400,14 @@ body {
     }
 
     .v-note-wrapper {
+      z-index: 80;
 
       .v-note-op{
-        border-color: $bd-color !important;
+        border-color: $lighter-bd-color !important;
       }
 
       .v-note-panel{
-        border-color: $bd-color !important;
+        border-color: $lighter-bd-color !important;
       }
 
       .auto-textarea-input {

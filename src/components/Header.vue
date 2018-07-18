@@ -1,11 +1,11 @@
 <template>
-  <div id="app-header">
+  <section id="app-header">
     <header class="frame-header">
       <div class="frame-wrapper">
         <div class="header-left">
           <a class="logo" href="/"><img src="../assets/images/logo.png"><span class="site-name">Ruster</span></a>
           <nav>
-            <a href="/">首页</a>
+            <a href="/" class="active">首页</a>
             <a href="/wiki">Wiki</a>
             <a href="/explore">Explore</a>
           </nav>
@@ -45,7 +45,7 @@
       <a href="todo/user/"><span class="icon"><i class="fa fa-user-circle"></i></span> 用户中心</a>
       <a href="todo/logout"><span class="icon"><i class="fa fa-sign-out"></i></span> 退出</a>
     </nav>
-  </div>
+  </section>
 </template>
 <script>
 

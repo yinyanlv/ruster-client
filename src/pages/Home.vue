@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <section>
     <div class="block-main">
       <div class="panel">
         <div class="panel-header">
@@ -17,6 +17,27 @@
           </div>
         </div>
         <div class="panel-content">
+          <div class="topic">
+            <div class="avatar">
+              <a href="/user/admin"><img src="http://www.gravatar.com/avatar/c316a0cab751aab144687151e96008d4?s=150"></a>
+            </div>
+            <div class="info">
+              <dl>
+                <dt>
+                  <span class="tag">置顶</span>
+                  <span class="tag">精华</span>
+                  <span class="tag tag-category">问答</span>
+                  <a href="/topic/dd7b5ba3fc4279a0e008ac363de053d7">哈哈，我是管理员，这是第一个帖子，欢迎大家来测试！</a>
+                </dt>
+                <dd>
+                  <span class="item"><a href="/user/admin">admin</a> 发布于 <span class="datetime-ago" data-datetime="2018-01-31T09:00:58">6 个月前</span></span>
+                  <span class="item">• <i class="reply-count">3</i> 个回复</span>
+                  <span class="item">• <i class="view-count">78</i> 次浏览</span>
+                  <span class="item right">最后由 <a href="/user/yinyanlv"><img src="https://avatars1.githubusercontent.com/u/10555534?v=4"> yinyanlv</a> 回复于 <span class="datetime-ago" data-datetime="2018-01-31T09:10:46">6 个月前</span></span>
+                </dd>
+              </dl>
+            </div>
+          </div>
           <div v-for="(topic, index) in topicList" :key="index" class="topic">
             <div class="avatar">
               <a href="/user/admin"><img src="/static/images/avatar.jpg"></a>
@@ -48,12 +69,12 @@
           </div>
         </div>
         <div class="panel-footer">
-          <app-pagination :current-page="currentPage"></app-pagination>
+          <app-pagination :current-page="currentPage" :total="200"></app-pagination>
         </div>
       </div>
     </div>
     <app-aside></app-aside>
-  </div>
+  </section>
 </template>
 <script>
 import config from '../config'

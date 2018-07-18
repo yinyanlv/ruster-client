@@ -10,15 +10,15 @@
             <div class="frame-form" id="form-change-password">
               <div class="input-line">
                 <label><span class="required">*</span>当前密码：</label>
-                <div class="input-wrapper"><input name="oldPassword" type="password" autocomplete="off" data-required="{'value': true, 'message': '密码为必填项'}" data-min-length="{'value': 6, 'message': '密码最少为6位'}" data-pattern="{'value': '^[a-zA-Z0-9]+$', 'message': '密码只能由字母和数字组成'}"></div>
+                <div class="input-wrapper"><input name="oldPassword" type="password" autocomplete="off" /></div>
               </div>
               <div class="input-line">
                 <label><span class="required">*</span>新密码：</label>
-                <div class="input-wrapper"><input name="newPassword" id="new-password" type="password" autocomplete="off" data-required="{'value': true, 'message': '密码为必填项'}" data-min-length="{'value': 6, 'message': '密码最少为6位'}" data-pattern="{'value': '^[a-zA-Z0-9]+$', 'message': '密码只能由字母和数字组成'}"></div>
+                <div class="input-wrapper"><input name="newPassword" type="password" autocomplete="off" /></div>
               </div>
               <div class="input-line">
                 <label><span class="required">*</span>重复新密码：</label>
-                <div class="input-wrapper"><input name="repeatNewPassword" type="password" autocomplete="off"  data-required="{'value': true, 'message': '重复密码为必填项'}" data-min-length="{'value': 6, 'message': '重复密码最少为6位'}" data-pattern="{'value': '^[a-zA-Z0-9]+$', 'message': '密码只能由字母和数字组成'}" data-equal="{'value': '#new-password', 'message': '重复新密码和新密码不一致'}"></div>
+                <div class="input-wrapper"><input name="repeatNewPassword" type="password" autocomplete="off" /></div>
               </div>
               <div class="error-line" id="error-line">
                 <div class="error-wrapper">
@@ -39,9 +39,9 @@
 </template>
 
 <script>
-    export default {
-        name: "ChangePassword"
-    }
+export default {
+  name: 'app-change-password'
+}
 </script>
 
 <style scoped>
