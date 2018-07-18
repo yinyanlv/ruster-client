@@ -48,7 +48,7 @@
           </div>
         </div>
         <div class="panel-footer">
-          <app-pagination :current-page="this.currentPage"></app-pagination>
+          <app-pagination :current-page="currentPage"></app-pagination>
         </div>
       </div>
     </div>

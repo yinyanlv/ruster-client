@@ -1,5 +1,5 @@
 <template>
-  <div class="pagination" id="app-pagination">
+  <div class="pagination">
     <a class="first" :class="{disabled: pagination.isFirstPageDisabled}" :href="pagination.baseUrl + '/' + pagination.firstPage">«</a>
     <a class="ellipsis" v-if="pagination.isShowPrevEllipsis">...</a>
     <a v-for="item in pagination.pageList" :key="item.page" :href="pagination.baseUrl + '/' + item.page" :class="{active: item.isActive, disabled: item.isActive}">{{item.page}}</a>

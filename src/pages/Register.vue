@@ -3,7 +3,7 @@
     <div class="block-main">
       <div class="panel">
         <div class="panel-header">
-          <app-crumbs></app-crumbs>
+          <app-crumbs :text="'注册'"></app-crumbs>
         </div>
         <div class="panel-content">
           <div class="frame-form" id="form-register">
