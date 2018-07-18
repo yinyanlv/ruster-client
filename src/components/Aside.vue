@@ -20,7 +20,7 @@
       <div class="panel-content">
         <ul class="info-list">
           <li>
-            <a href="https://rust.cc" rel="nofollow" target="_blank" style="font-size:22px;font-weight: bold;">
+            <a class="text" href="https://rust.cc" rel="nofollow" target="_blank">
               rust.cc
             </a>
           </li>
@@ -90,6 +90,11 @@ export default {
   .info-list {
     li {
       text-align: center;
+    }
+
+    .text{
+      font-size:22px;
+      font-weight: bold;
     }
   }
 }

@@ -3,7 +3,7 @@
     <div class="block-main">
       <div class="panel">
         <div class="panel-header">
-          <app-crumbs></app-crumbs>
+          <app-crumbs :text="crumbText"></app-crumbs>
         </div>
         <div class="panel-content">
           <div class="create-topic">
@@ -20,7 +20,7 @@
             </div>
             <div class="editor-wrapper">
               <div class="editor-wrapper-inner edit-article">
-                <textarea name="content" class="editor"></textarea>
+                <mavon-editor :boxShadow="false" :subfield="false"></mavon-editor>
               </div>
             </div>
             <div class="btn-line">
@@ -35,6 +35,7 @@
 </template>
 
 <script>
+import {mavonEditor} from 'mavon-editor'
 import Aside from '../../components/Aside'
 import Crumbs from '../../components/Crumbs'
 
@@ -42,11 +43,17 @@ export default {
   name: 'page-topic-edit',
   components: {
     'app-crumbs': Crumbs,
-    'app-aside': Aside
+    'app-aside': Aside,
+    'mavon-editor': mavonEditor
+  },
+  data: function () {
+    return {
+      crumbText: '创建话题'
+    }
   }
 }
 </script>
 
-<style scoped>
+<style lang="scss">
 
 </style>

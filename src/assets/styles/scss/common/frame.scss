@@ -389,27 +389,33 @@ body {
   padding: 1rem;
 
   .editor-wrapper-inner {
-    border: .1rem solid $bd-color;
-    border-top: 0;
     width: 100%;
-    height: 30rem;
     font-size: 1.4rem;
     position: relative;
 
-    & > textarea {
-      width: 100%;
-      height: 100%;
-    }
-
-    .CodeMirror {
-      height: 25.4rem;
-    }
-
     &.edit-article {
-      height: 60rem;
 
-      .CodeMirror {
-        height: 55.4rem;
+      .v-note-wrapper {
+        min-height: 60rem;
+      }
+    }
+
+    .v-note-wrapper {
+
+      .v-note-op{
+        border-color: $bd-color !important;
+      }
+
+      .v-note-panel{
+        border-color: $bd-color !important;
+      }
+
+      .auto-textarea-input {
+        box-shadow: none !important;
+
+        &:focus {
+          box-shadow: none !important;
+        }
       }
     }
   }

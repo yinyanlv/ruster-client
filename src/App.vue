@@ -14,8 +14,8 @@ export default {
 </script>
 
 <style lang="scss">
-  @import "assets/styles/scss/common/reset";
-  @import "assets/styles/scss/common/frame";
-  @import "assets/styles/scss/common/mobile";
-  @import "assets/styles/scss/common/override";
+@import "assets/styles/scss/common/reset";
+@import "assets/styles/scss/common/frame";
+@import "assets/styles/scss/common/mobile";
+@import "assets/styles/scss/common/override";
 </style>
