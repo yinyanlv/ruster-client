@@ -37,3 +37,40 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+@import "../assets/styles/scss/sdk/index";
+
+.introduction {
+  padding: 1rem;
+
+  h2 {
+    font-size: 2rem;
+    line-height: 2.8rem;
+    padding: .5rem 0;
+    border-bottom: .1rem solid $lighter-bd-color;
+    margin: 1rem 0;
+  }
+
+  h3 {
+    font-size: 1.8rem;
+    line-height: 2.8rem;
+    padding: .5rem 0;
+    border-bottom: .1rem solid $lighter-bd-color;
+    margin: 1rem 0;
+  }
+
+  p {
+    line-height: 2rem;
+    font-size: 1.4rem;
+    padding: 1rem 0;
+  }
+
+  a {
+    color: $theme-color;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+</style>

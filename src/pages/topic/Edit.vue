@@ -55,5 +55,36 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../../assets/styles/scss/sdk/index";
+.create-topic {
+  padding: 1rem;
 
+  .category-line {
+    padding: 1rem;
+    line-height: 2rem;
+    font-size: 1.4rem;
+  }
+
+  .title-line {
+    padding: 1rem;
+    line-height: 3rem;
+    font-size: 1.4rem;
+
+    label {
+      float: left;
+    }
+
+    .input-wrapper {
+      padding-left: 5rem;
+    }
+
+    input {
+      width: 100%;
+    }
+  }
+
+  .btn-line {
+    padding: 0 1rem 1rem;
+  }
+}
 </style>

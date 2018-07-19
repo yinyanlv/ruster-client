@@ -86,6 +86,14 @@ export default {
 <style lang="scss">
 @import "../assets/styles/scss/sdk/index";
 
+.block-aside {
+  display: table-cell;
+  width: 30.5rem;
+  min-width: 30.5rem;
+  padding-left: 1.5rem;
+  vertical-align: top;
+}
+
 .friendly-link {
   .info-list {
     li {
@@ -96,6 +104,15 @@ export default {
       font-size:22px;
       font-weight: bold;
     }
+  }
+}
+
+@include mobile() {
+  .block-aside {
+    display: block;
+    width: 100%;
+    min-width: 100%;
+    padding-left: 0;
   }
 }
 </style>

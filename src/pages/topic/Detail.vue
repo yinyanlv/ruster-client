@@ -246,5 +246,161 @@ Strong together
 }
 </script>
 <style lang="scss">
+@import "../../assets/styles/scss/sdk/index";
 
+
+.article {
+  width: 100%;
+}
+
+.article-header {
+  padding: 1rem;
+  font-size: 1.2rem;
+  background: $panel-header-bg-color;
+  border-bottom: .1rem solid $lighter-bd-color;
+
+  .title {
+    line-height: 2.6rem;
+    margin: .8rem 0;
+
+    h3 {
+      font-size: 2rem;
+      font-weight: 700;
+      display: inline;
+    }
+  }
+
+  .info {
+    line-height: 1.8rem;
+    color: $lightest-font-color;
+
+    a {
+      color: $ask-user-color;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .operator {
+    overflow: hidden;
+    margin-top: .5rem;
+
+    & > div {
+      float: right;
+    }
+
+    span {
+      padding: 0 0.4rem;
+      color: $theme-color;
+      line-height: 1.8rem;
+      cursor: pointer;
+
+      .fa {
+        margin-right: .3rem;
+      }
+
+      .text {
+        padding: 0;
+      }
+
+      .num {
+        padding: 0 .1rem;
+      }
+    }
+  }
+}
+
+.article-content {
+  padding: 1rem;
+
+}
+
+.comment {
+  padding: 1rem;
+  border-bottom: .1rem solid $lighter-bd-color;
+
+  &.highlight {
+    background: $comment-highlight-bg-color;
+  }
+
+  .avatar {
+    width: 3rem;
+    height: 3rem;
+    @include borderRadius(.3rem);
+    float: left;
+
+    img {
+      width: 100%;
+      height: 100%;
+      vertical-align: top;
+      @include borderRadius(.3rem);
+    }
+  }
+
+  .info {
+    padding-left: 4rem;
+
+    dt {
+      overflow: hidden;
+      font-size: 1.2rem;
+      color: $theme-color;
+      line-height: 1.8rem;
+
+      .comment-info {
+        float: left;
+      }
+
+      .operator {
+        float: right;
+      }
+
+      .username {
+        color: $lighter-font-color;
+        font-weight: bold;
+      }
+
+      .btn {
+        color: $theme-color;
+        padding: 0 0.4rem;
+      }
+
+      .num {
+        padding: 0 0.1rem;
+      }
+    }
+
+    dd {
+      margin-top: .6rem;
+
+      &.editor-wrapper-box {
+        display: none;
+      }
+    }
+  }
+
+  .editor-wrapper {
+    padding: 1rem 0 0;
+  }
+}
+
+@include mobile() {
+
+  .comment {
+
+    .info {
+
+      dt {
+
+        .operator {
+
+          margin-top: .5rem;
+          width: 100%;
+          float: left;
+        }
+      }
+    }
+  }
+}
 </style>

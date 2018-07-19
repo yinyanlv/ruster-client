@@ -7,7 +7,7 @@
         </div>
         <ul>
           <li>
-            <div class="frame-form" id="form-change-password">
+            <div class="frame-form">
               <div class="input-line">
                 <label><span class="required">*</span>当前密码：</label>
                 <div class="input-wrapper"><input name="oldPassword" type="password" autocomplete="off" /></div>

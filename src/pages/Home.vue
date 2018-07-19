@@ -113,3 +113,36 @@ export default {
   }
 }
 </script>
+<style lang="scss">
+@import "../assets/styles/scss/sdk/index";
+
+.panel {
+  .panel-header{
+    .tabs {
+      padding: 0.5rem 1rem;
+      min-height: 4rem;
+      line-height: 3rem;
+      font-size: 0;
+
+      a {
+        line-height: 2.2rem;
+        height: 2.2rem;
+        display: inline-block;
+        font-size: 1.4rem;
+        margin: 0 .3rem;
+        color: $theme-color;
+        background: transparent;
+        border-radius: .3rem;
+        padding: 0 .5rem;
+        vertical-align: middle;
+        @include transition(all .2s ease-in-out);
+
+        &.active, &:hover {
+          background: $theme-color;
+          color: #fff;
+        }
+      }
+    }
+  }
+}
+</style>

@@ -48,14 +48,12 @@
   </section>
 </template>
 <script>
-
 export default {
   name: 'app-header'
 }
 </script>
 <style lang="scss">
 @import "../assets/styles/scss/sdk/index";
-
 .frame-header {
   height: 5rem;
   background: #fff;
@@ -154,6 +152,119 @@ export default {
       font-size: 1.8rem;
       color: $lightest-font-color;
     }
+  }
+}
+
+.m-frame-header {
+  width: 100%;
+  height: 4.5rem;
+  position: fixed;
+  background: #fff;
+  display: none;
+  top: 0;
+  z-index: 100;
+  border-bottom: .1rem solid $lighter-bd-color;
+
+  .btn {
+    height: 4.4rem;
+    text-align: center;
+    line-height: 4.4rem;
+    font-size: 1.4rem;
+    color: $font-color;
+    padding: 0 .5rem;
+  }
+
+  .btn-menu {
+    float: left;
+    font-size: 2rem;
+    width: 4.4rem;
+    padding: 0;
+  }
+
+  .box-btns {
+    float: right;
+    height: 4.4rem;
+    line-height: 4.4rem;
+  }
+
+  .icon-red-dot {
+    position: relative;
+    width: .6rem;
+    height: .6rem;
+    @include borderRadius(50%);
+    background: red;
+    top: -.8rem;
+  }
+
+  .title {
+    padding: 0 15rem;
+    text-align: center;
+    @include setHeightGroup(4.4rem);
+
+    a {
+      display: inline-block;
+      height: 3.2rem;
+      width: 3.2rem;
+      vertical-align: middle;
+    }
+
+    img {
+      height: 3.2rem;
+      width: 3.2rem;
+      vertical-align: top;
+    }
+  }
+}
+
+.m-nav-bg {
+  background: rgba(0, 0, 0, .5);
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 90;
+  display: none;
+}
+
+.m-nav {
+  width: 100%;
+  position: fixed;
+  top: 4.5rem;
+  background: #fff;
+  display: none;
+  z-index: 100;
+
+  a {
+    display: block;
+    width: 100%;
+    height: 3.7rem;
+    line-height: 3.6rem;
+    border-bottom: .1rem solid $lighter-bd-color;
+    padding: 0 1rem 0 5rem;
+    font-size: 1.4rem;
+    color: $font-color;
+    position: relative;
+
+    .icon {
+      width: 4.4rem;
+      @include setHeightGroup(3.6rem);
+      position: absolute;;
+      left: 0;
+      top: 0;
+      text-align: center;
+      font-size: 2rem;
+    }
+  }
+}
+
+@include mobile() {
+  .frame-header {
+    display: none;
+  }
+
+  .m-frame-header {
+    display: block;
   }
 }
 </style>

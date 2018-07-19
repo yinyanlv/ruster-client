@@ -15,7 +15,7 @@ header, footer, article, section, nav, aside, figure {
   display: block
 }
 
-input, textarea{
+input, textarea {
 
   @include placeholderColor(red);
 }
@@ -27,29 +27,24 @@ input, textarea, a, button, select {
 input[type="button"], input[type="submit"], input[type="reset"], textarea, button {
   -webkit-appearance: none;
   @include borderRadius(0);
-  border:0;
+  border: 0;
 }
 
-input:focus, textarea:focus, a:focus, button:focus{
-  -webkit-tap-highlight-color: rgba(255,255,255,0);
+input:focus, textarea:focus, a:focus, button:focus {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 }
 
-input{
+input {
 
   &::-ms-clear {
     display: none;
   }
 
-  &::-ms-reveal{
-    display:none;
+  &::-ms-reveal {
+    display: none;
   }
 
-  &::-webkit-search-cancel-button{
+  &::-webkit-search-cancel-button {
     display: none;
   }
 }
-
-a {
-  text-decoration: none;
-}
-

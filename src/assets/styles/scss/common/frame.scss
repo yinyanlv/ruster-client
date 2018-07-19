@@ -31,6 +31,10 @@ body {
   }
 }
 
+a {
+  text-decoration: none;
+}
+
 .btn, .icon {
   display: inline-block;
 }
@@ -63,11 +67,6 @@ body {
   }
 }
 
-.mg-l-10 {
-  margin-left: 1rem;
-}
-
-
 .frame-wrapper {
   width: 90%;
   min-width: 98rem;
@@ -84,17 +83,6 @@ body {
   }
 }
 
-.frame-content {
-  padding: 6.5rem 0 0;
-  width: 100%;
-
-  .block-main {
-    display: table-cell;
-    vertical-align: top;
-    width:100%;
-  }
-}
-
 .panel {
   width: 100%;
   height: 100%;
@@ -107,11 +95,11 @@ body {
     min-height: 4rem;
     background: $panel-header-bg-color;
 
-    .btn-panel-header-right{
-      float:right;
+    .btn-panel-header-right {
+      float: right;
       @include setHeightGroup(2.4rem);
-      font-size:1.4rem;
-      margin:.8rem 1rem;
+      font-size: 1.4rem;
+      margin: .8rem 1rem;
       padding: 0 .8rem;
     }
     h4, .title {
@@ -122,32 +110,6 @@ body {
       font-size: 1.3rem;
       color: $font-color;
       font-weight: normal;
-    }
-
-    .tabs {
-      padding: 0.5rem 1rem;
-      min-height: 4rem;
-      line-height: 3rem;
-      font-size: 0;
-
-      a {
-        line-height: 2.2rem;
-        height:2.2rem;
-        display: inline-block;
-        font-size: 1.4rem;
-        margin: 0 .3rem;
-        color: $theme-color;
-        background: transparent;
-        border-radius: .3rem;
-        padding: 0 .5rem;
-        vertical-align: middle;
-        @include transition(all .2s ease-in-out);
-
-        &.active, &:hover {
-          background: $theme-color;
-          color: #fff;
-        }
-      }
     }
   }
 
@@ -196,7 +158,7 @@ body {
     color: #fff;
   }
 
-  .tag-category{
+  .tag-category {
     color: $lightest-font-color;
     background: $tag-category-bg-color;
   }
@@ -278,15 +240,15 @@ body {
         color: $ask-user-color;
       }
 
-      i{
+      i {
         font-style: normal;
       }
 
-      .reply-count{
+      .reply-count {
         color: $reply-count-color;
       }
 
-      .view-count{
+      .view-count {
         color: $view-count-color;
       }
     }
@@ -300,11 +262,11 @@ body {
         img {
           display: inline-block;
           vertical-align: top;
-          height:1.6rem;
-          width:1.6rem;
-          margin:0 .2rem;
+          height: 1.6rem;
+          width: 1.6rem;
+          margin: 0 .2rem;
           position: relative;
-          top:-.1rem;
+          top: -.1rem;
           @include borderRadius(.2rem);
         }
       }
@@ -313,102 +275,6 @@ body {
 
   &:hover {
     background: $topic-hover-bg-color;
-  }
-}
-
-.block-aside {
-  display: table-cell;
-  width: 30.5rem;
-  min-width: 30.5rem;
-  padding-left: 1.5rem;
-  vertical-align: top;
-}
-
-
-.user-card {
-  padding: 1rem;
-
-  .avatar {
-    float: left;
-    width: 4.8rem;
-    height: 4.8rem;
-    @include borderRadius(.4rem);
-
-    img {
-      vertical-align: top;
-      width: 100%;
-      height: 100%;
-      @include borderRadius(.4rem);
-    }
-  }
-
-  .username-box {
-    padding-left: 5.8rem;
-    line-height: 4.8rem;
-
-    .username {
-      font-size: 1.6rem;
-      color: $lighter-font-color;
-
-      &:hover {
-        text-decoration: none;
-      }
-    }
-  }
-
-  .signature {
-    color: $lighter-font-color;
-    font-style: italic;
-    font-size: 1.4rem;
-    line-height: 2rem;
-    padding: 1rem 0 0;
-  }
-}
-
-.back-to-top {
-  position: fixed;
-  right: 0;
-  top: 60%;
-  width: 2.8rem;
-  color: gray;
-  cursor: pointer;
-  text-align: center;
-  z-index: 20;
-  line-height: 2rem;
-  background-color: #fff;
-  padding: 1.2rem 0 1.2rem .5rem;
-  border-radius: 1.2rem 0 0 1.2rem;
-  @include boxShadow(0 0 .3rem $box-shadow-color);
-
-  span{
-    display: inline-block;
-    width:1.6rem;
-  }
-}
-
-.crumbs {
-  padding: 1rem;
-  color: $lightest-font-color;
-  font-size: 0;
-  line-height: 2rem;
-  height: 4rem;
-
-  a {
-    font-size: 1.4rem;
-    color: $theme-color;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  .divider {
-    font-size: 1.4rem;
-    padding: 0 .5rem;
-  }
-
-  .current {
-    font-size: 1.4rem;
   }
 }
 
@@ -430,11 +296,11 @@ body {
     .v-note-wrapper {
       z-index: 80;
 
-      .v-note-op{
+      .v-note-op {
         border-color: $lighter-bd-color !important;
       }
 
-      .v-note-panel{
+      .v-note-panel {
         border-color: $lighter-bd-color !important;
       }
 
@@ -450,72 +316,6 @@ body {
 
   .btn-line {
     padding: 1rem 0 0;
-  }
-}
-
-.create-topic {
-  padding: 1rem;
-
-  .category-line {
-    padding: 1rem;
-    line-height: 2rem;
-    font-size: 1.4rem;
-  }
-
-  .title-line {
-    padding: 1rem;
-    line-height: 3rem;
-    font-size: 1.4rem;
-
-    label {
-      float: left;
-    }
-
-    .input-wrapper {
-      padding-left: 5rem;
-    }
-
-    input {
-      width: 100%;
-    }
-  }
-
-  .btn-line {
-    padding: 0 1rem 1rem;
-  }
-}
-
-.introduction {
-  padding: 1rem;
-
-  h2 {
-    font-size: 2rem;
-    line-height: 2.8rem;
-    padding: .5rem 0;
-    border-bottom: .1rem solid $lighter-bd-color;
-    margin: 1rem 0;
-  }
-
-  h3 {
-    font-size: 1.8rem;
-    line-height: 2.8rem;
-    padding: .5rem 0;
-    border-bottom: .1rem solid $lighter-bd-color;
-    margin: 1rem 0;
-  }
-
-  p {
-    line-height: 2rem;
-    font-size: 1.4rem;
-    padding: 1rem 0;
-  }
-
-  a {
-    color: $theme-color;
-
-    &:hover {
-      text-decoration: underline;
-    }
   }
 }
 
@@ -596,7 +396,7 @@ body {
 
       i {
         font-size: 1.4rem;
-        margin-right:.3rem;
+        margin-right: .3rem;
       }
     }
   }
@@ -610,38 +410,20 @@ body {
       padding: 0 0 0 17.5rem;
       font-size: 0;
 
-      .btn{
-        font-size:1.4rem;
+      .btn {
+        font-size: 1.4rem;
         margin: 0 1rem 1rem 0;
       }
     }
   }
 }
 
-.message-list {
-  .message {
-    padding: 1.5rem 1rem;
-    font-size: 1.4rem;
-    line-height: 2rem;
-    border-bottom: .1rem solid $lighter-bd-color;
-
-    a {
-      color: $theme-color;
-
-      &:hover{
-        text-decoration: underline;
-      }
-    }
-  }
-}
-
-
 .user-info-wrapper {
   background: #fff;
   position: relative;
   margin-bottom: 1.5rem;
 
-  &:before{
+  &:before {
     content: '';
     display: block;
     height: 10rem;
@@ -679,16 +461,16 @@ body {
       margin: .8rem;
       overflow: hidden;
 
-      .label{
+      .label {
         color: $lightest-font-color;
         display: inline-block;
         text-align: right;
-        width:9.5rem;
-        float:left;
+        width: 9.5rem;
+        float: left;
       }
 
-      .text{
-        padding-left:10.5rem;
+      .text {
+        padding-left: 10.5rem;
       }
 
       .icon-wrapper {
@@ -726,317 +508,82 @@ body {
   }
 }
 
-.frame-footer {
+.no-data {
   width: 100%;
-  padding: 1.5rem 0;
-  background: #fff;
-  @include boxShadow(0 -.1rem .1rem $box-shadow-color);
-
-  .links {
-    width: 100%;
-    font-size: 0;
-    padding: .4rem 0;
-
-    a {
-      padding: 0 .5rem;
-      font-size: 1.3rem;
-      line-height: 1.8rem;
-      color: $font-color;
-      border-left: .1rem solid $bd-color;
-
-      &:hover {
-        color: $theme-color;
-        text-decoration: underline;
-      }
-
-      &:first-child {
-        border-left: 0;
-        padding-left: 0;
-      }
-    }
-  }
-
-  .site-info {
-    color: $lightest-font-color;
-    font-size: 1.3rem;
-    line-height: 1.8rem;
-  }
-}
-
-.no-data{
-  width:100%;
   @include setHeightGroup(12rem);
   text-align: center;
   color: $lightest-font-color;
-  font-size:1.4rem;
+  font-size: 1.4rem;
 }
 
-.not-found {
-  position: absolute;
-  width: 100%;
-  top: 30%;
+@include mobile() {
 
-  .info {
-    text-align: center;
-    font-size: 4.4rem;
-    font-weight: bold;
-    line-height: 6rem;
-    color: $lighter-font-color;
-
-    span {
-      color: $lightest-font-color;
-    }
+  body {
+    min-width: 32rem;
   }
 
-  .btn-line {
-    margin-top: 1rem;
-    font-size: 2rem;
-    line-height: 3rem;
-    text-align: center;
-
-    a {
-      color: $theme-color;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
+  .frame-wrapper {
+    width: 100%;
+    display: block;
+    min-width: 32rem;
+    max-width: 76.8rem;
   }
-}
 
-.dialog-bg {
-  background: rgba(0, 0, 0, .5);
-  position: fixed;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 1000;
-}
+  .topic {
 
-.dialog-wrapper {
-  background: #fff;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  z-index: 1100;
-  width: 30rem;
-  @include borderRadius(.4rem);
-  @include transform(translate3d(-50%, -50%, 0));
-
-  .dialog-header {
-    padding: 0 0 0 1rem;
-    font-size: 1.4rem;
-    height: 3.7rem;
-    line-height: 3.6rem;
-    border-bottom: .1rem solid $theme-color;
-
-    span {
-      display: inline-block;
-      width: 3.6rem;
-      @include setHeightGroup(3.6rem);
-      text-align: center;
-      color: $lightest-font-color;
-      float: right;
-      font-size: 1.8rem;
-
-      &:hover {
-        color: $theme-color;
+    dd {
+      .right {
+        float: left;
+        width: 100%;
+        margin-top: .4rem;
       }
     }
   }
 
-  .dialog-content {
-    padding: 1rem;
+  .frame-form {
 
-    input[type=file] {
-      display: none;
+    .input-line {
+
+      label {
+        width: 10rem;
+      }
+
+      .input-wrapper {
+        padding-left: 11.5rem;
+
+        input {
+          width: 100%;
+        }
+      }
+    }
+
+    .help-line {
+
+      .help-wrapper {
+        padding: 0 0 0 11.5rem;
+        width: 100%;
+      }
+    }
+
+    .error-line {
+
+      .error-wrapper {
+        padding: 0 0 0 11.5rem;
+        width: 100%;
+      }
     }
 
     .btn-line {
-      font-size: 0;
-      padding: 0 0 1rem;
 
-      .btn {
-        margin-right: 1rem;
+      .btn-wrapper {
+        padding: 0 0 0 11.5rem;
+        width: 100%;
       }
     }
+  }
 
-    .file-list {
-      padding: 0 0 1rem;
-      color: $lighter-font-color;
-      max-height: 25rem;
-      overflow-y: auto;
-    }
-
-    .file {
-      width: 100%;
-      height: 3.1rem;
-      padding: 0 0 0 1rem;
-      border-bottom: .1rem dotted $bd-color;
-      position: relative;
-
-      &:first-child {
-        border-top: .1rem dotted $bd-color;
-      }
-    }
-
-    .filename {
-      width: 100%;
-      padding-right: 4rem;
-      @include setHeightGroup(3rem);
-      @extend %textOverflowEllipsis;
-    }
-
-    .btn-delete-file {
-      display: inline-block;
-      position: absolute;
-      right: 0;
-      top: 0;
-      width: 3rem;
-      @include setHeightGroup(3rem);
-      text-align: center;
-      font-size: 1.8rem;
-
-      &:hover {
-        color: $theme-color;
-      }
-    }
+  .no-data {
+    @include setHeightGroup(6rem);
   }
 }
 
-.article{
-  width:100%;
-}
-
-.article-header{
-  padding:1rem;
-  font-size:1.2rem;
-  background:  $panel-header-bg-color;
-  border-bottom: .1rem solid $lighter-bd-color;
-
-  .title{
-    line-height: 2.6rem;
-    margin:.8rem 0;
-
-    h3 {
-      font-size: 2rem;
-      font-weight: 700;
-      display: inline;
-    }
-  }
-
-  .info{
-    line-height: 1.8rem;
-    color: $lightest-font-color;
-
-    a{
-      color: $ask-user-color;
-
-      &:hover{
-        text-decoration: underline;
-      }
-    }
-  }
-
-  .operator{
-    overflow: hidden;
-    margin-top:.5rem;
-
-    & > div {
-      float:right;
-    }
-
-    span {
-      padding:0 0.4rem;
-      color: $theme-color;
-      line-height: 1.8rem;
-      cursor: pointer;
-
-      .fa{
-        margin-right:.3rem;
-      }
-
-      .text{
-        padding:0;
-      }
-
-      .num {
-        padding:0 .1rem;
-      }
-    }
-  }
-}
-
-.article-content{
-  padding:1rem;
-
-}
-
-.comment{
-  padding:1rem;
-  border-bottom:.1rem solid $lighter-bd-color;
-
-  &.highlight{
-    background: $comment-highlight-bg-color;
-  }
-
-  .avatar{
-    width:3rem;
-    height:3rem;
-    @include borderRadius(.3rem);
-    float:left;
-
-    img {
-      width:100%;
-      height:100%;
-      vertical-align: top;
-      @include borderRadius(.3rem);
-    }
-  }
-
-  .info{
-    padding-left:4rem;
-
-    dt {
-      overflow: hidden;
-      font-size:1.2rem;
-      color:$theme-color;
-      line-height: 1.8rem;
-
-      .comment-info{
-        float:left;
-      }
-
-      .operator{
-        float:right;
-      }
-
-      .username{
-        color:$lighter-font-color;
-        font-weight: bold;
-      }
-
-      .btn{
-        color:$theme-color;
-        padding:0 0.4rem;
-      }
-
-      .num{
-        padding:0 0.1rem;
-      }
-    }
-
-    dd{
-      margin-top:.6rem;
-
-      &.editor-wrapper-box {
-        display: none;
-      }
-    }
-  }
-
-  .editor-wrapper{
-    padding: 1rem 0 0;
-  }
-}

@@ -7,7 +7,7 @@
         </div>
         <ul>
           <li>
-            <div class="frame-form" id="form-user">
+            <div class="frame-form">
               <div class="input-line">
                 <label><span class="required">*</span>用户名：</label>
                 <div class="input-wrapper"><input name="username" type="text" value="" /></div>

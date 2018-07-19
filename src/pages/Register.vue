@@ -6,7 +6,7 @@
           <app-crumbs :text="'注册'"></app-crumbs>
         </div>
         <div class="panel-content">
-          <div class="frame-form" id="form-register">
+          <div class="frame-form">
             <div class="input-line">
               <label><span class="required">*</span>用户名：</label>
               <div class="input-wrapper"><input type="text" name="username" data-required="{'value': true, 'message': '用户名为必填项'}" data-pattern="{'value': '^[a-zA-Z0-9_-]{1,18}$', 'message': '用户名只能由字母、数字、下划线、中划线组成，且不能超过18位'}"></div>

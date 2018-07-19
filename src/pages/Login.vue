@@ -6,7 +6,7 @@
           <app-crumbs :text="'登录'"></app-crumbs>
         </div>
         <div class="panel-content">
-          <div class="frame-form" id="form-login">
+          <div class="frame-form">
             <div class="input-line">
               <label><span class="required">*</span>用户名：</label>
               <div class="input-wrapper"><input type="text" name="username" /></div>
