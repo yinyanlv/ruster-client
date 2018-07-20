@@ -115,7 +115,7 @@ export default {
               this.$router.push('/')
             } else {
               this.isShowError = true
-              this.errorMessage = data.message
+              this.errorMessage = data.message || ERROR_MESSAGE.loginInvalid
             }
           })
           .catch((e) => {
