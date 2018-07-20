@@ -20,14 +20,14 @@
                 <label><span class="required">*</span>重复新密码：</label>
                 <div class="input-wrapper"><input name="repeatNewPassword" type="password" autocomplete="off" /></div>
               </div>
-              <div class="error-line" id="error-line">
+              <div class="error-line">
                 <div class="error-wrapper">
-                  <i class="fa fa-exclamation-circle"></i> <span id="error-message"></span>
+                  <i class="fa fa-exclamation-circle"></i> <span>该功能暂未实现</span>
                 </div>
               </div>
               <div class="btn-line">
                 <div class="btn-wrapper">
-                  <a href="javascript:;" class="btn btn-primary" id="btn-change-password">更改密码</a>
+                  <a href="javascript:;" class="btn btn-primary">更改密码</a>
                 </div>
               </div>
             </div>

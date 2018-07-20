@@ -126,7 +126,7 @@ export default {
     },
     register: function () {
       if (this.validate()) {
-        let data = {
+        let params = {
           username: this.username,
           email: this.email,
           password: this.password,
@@ -137,7 +137,7 @@ export default {
           headers: {
             'content-type': 'application/json'
           },
-          body: JSON.stringify(data)
+          body: JSON.stringify(params)
         }).then(res => res.json())
           .then(data => {
             if (data.status === 200) {
@@ -147,8 +147,8 @@ export default {
               this.errorMessage = data.message
             }
           })
-          .catch((e) => {
-            console.log(e)
+          .catch((err) => {
+            console.log(err)
           })
       }
     }

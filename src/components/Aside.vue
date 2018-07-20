@@ -6,10 +6,11 @@
         <h4>话题推荐</h4>
       </div>
       <div class="panel-content">
-        <ul v-if="newBest && newBest.length > 0" class="info-list limit-text">
-          <li><a href="todo">todo</a></li>
-        </ul>
-        <div v-if="newBest && newBest.length === 0"  class="no-data">暂无推荐的话题</div>
+        <!-- TODO -->
+        <!--<ul class="info-list limit-text">-->
+          <!--<li><a href="#">title</a></li>-->
+        <!--</ul>-->
+        <div class="no-data">暂无推荐的话题</div>
       </div>
     </div>
 
@@ -50,8 +51,10 @@
       <div class="panel-content">
         <ul class="info-list">
           <li>社区会员: n 人</li>
-          <li>帖子数: n 个</li>
-          <li>回帖数: n 条</li>
+          <li>话题: n 个</li>
+          <li>博客: n 条</li>
+          <li>评论: n 条</li>
+          <li>收藏: n 条</li>
         </ul>
       </div>
     </div>
@@ -63,22 +66,25 @@ import config from '../config'
 export default {
   name: 'app-aside',
   mounted: function () {
-    fetch(config.urlPrefix + '/api/home/bestperson', {
-      method: 'GET',
-      mode: 'cors'
-    }).then(res => res.json())
-      .then(data => {
-        this.newBest = data.new_best
-        this.allBest = data.all_best
-      })
-      .catch((err) => {
-        console.log(err)
-      })
+    this.loadSiteInfo()
   },
   data: function () {
     return {
       newBest: [],
-      allBest: []
+      siteInfo: []
+    }
+  },
+  methods: {
+    loadSiteInfo: function () {
+      fetch(config.urlPrefix + '/api/ruster/info', {
+        method: 'GET'
+      }).then(res => res.json())
+        .then(data => {
+
+        })
+        .catch((err) => {
+          console.log(err)
+        })
     }
   }
 }

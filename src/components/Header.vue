@@ -1,20 +1,21 @@
 <template>
-  <section id="app-header">
+  <section>
     <header class="frame-header">
       <div class="frame-wrapper">
         <div class="header-left">
           <a class="logo" href="/"><img src="../assets/images/logo.png"><span class="site-name">Ruster</span></a>
           <nav>
             <a href="/" class="active">首页</a>
-            <a href="/wiki">Wiki</a>
-            <a href="/explore">Explore</a>
+            <!-- TODO -->
+            <!--<a href="/wiki">Wiki</a>-->
+            <!--<a href="/explore">Explore</a>-->
           </nav>
         </div>
         <div class="header-right">
-          <form class="search" method="get" action="todo/search">
+          <div class="search">
             <input class="input-search" type="search" name="keyword" placeholder="请输入关键字" value="">
             <a class="btn btn-search" href="javascript:;"><i class="fa fa-search"></i></a>
-          </form>
+          </div>
           <nav>
             <a href="/create-topic">发布话题</a>
             <a href="/user/admin">admin</a>
@@ -27,7 +28,7 @@
     </header>
 
     <header class="m-frame-header">
-      <a href="javascript:;" class="btn btn-menu" id="m-btn-menu"><i class="fa fa-navicon"></i></a>
+      <a href="javascript:;" class="btn btn-menu"><i class="fa fa-navicon"></i></a>
       <div class="box-btns">
         <a class="btn" href="todo/create-topic">发布话题</a>
         <a class="btn" href="todo/register">注册</a>
@@ -38,8 +39,8 @@
       </div>
     </header>
 
-    <div class="m-nav-bg" id="m-nav-bg"></div>
-    <nav class="m-nav" id="m-nav">
+    <div class="m-nav-bg"></div>
+    <nav class="m-nav">
       <a href="todo"><span class="icon"><i class="fa fa-home"></i></span> 首页</a>
       <a href="todo/resource"><span class="icon"><i class="fa fa-file-text"></i></span> 资源</a>
       <a href="todo/user/"><span class="icon"><i class="fa fa-user-circle"></i></span> 用户中心</a>

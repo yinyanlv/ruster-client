@@ -20,14 +20,14 @@
                 <label>GitHub账号：</label>
                 <div class="input-wrapper"><input name="githubAccount" type="text" value=""></div>
               </div>
-              <div class="error-line" id="error-line">
+              <div class="error-line">
                 <div class="error-wrapper">
-                  <i class="fa fa-exclamation-circle"></i> <span id="error-message"></span>
+                  <i class="fa fa-exclamation-circle"></i> <span>该功能暂未实现</span>
                 </div>
               </div>
               <div class="btn-line">
                 <div class="btn-wrapper">
-                  <a href="javascript:;" class="btn btn-primary" id="btn-save-user">保存设置</a>
+                  <a href="javascript:;" class="btn btn-primary">保存设置</a>
                 </div>
               </div>
             </div>

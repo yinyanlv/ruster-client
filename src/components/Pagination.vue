@@ -8,7 +8,7 @@
   </div>
 </template>
 <script>
-const RECORDS_COUNT_PER_PAGE = 15
+const RECORDS_COUNT_PER_PAGE = 7
 
 export default {
   name: 'app-pagination',
@@ -37,7 +37,7 @@ export default {
         delta = 0
       }
 
-      let pageCount = total / RECORDS_COUNT_PER_PAGE + delta
+      let pageCount = parseInt(total / RECORDS_COUNT_PER_PAGE) + delta
       let isShowPrevEllipsis = true
       let isShowNextEllipsis = true
       let isFirstPageDisabled = false
@@ -101,7 +101,6 @@ export default {
               isActive: true
             })
           } else {
-
             pageList.push({
               page: i
             })

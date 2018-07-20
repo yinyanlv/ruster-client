@@ -13,7 +13,7 @@
             </div>
             <div class="error-line" id="error-line">
               <div class="error-wrapper">
-                <i class="fa fa-exclamation-circle"></i><span id="error-message">{{message}}</span>
+                <i class="fa fa-exclamation-circle"></i><span id="error-message">{{errorMessage}}</span>
               </div>
             </div>
             <div class="btn-line">
@@ -42,7 +42,7 @@ export default {
   },
   data: function () {
     return {
-      message: ''
+      errorMessage: '该功能暂未实现'
     }
   }
 }

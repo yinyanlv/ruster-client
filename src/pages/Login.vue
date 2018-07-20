@@ -15,12 +15,11 @@
               <label><span class="required">*</span>密码：</label>
               <div class="input-wrapper"><input type="password" name="password" autocomplete="off" v-model="password" @focus="clearError" @keyup.enter="login" /></div>
             </div>
-            <!-- TODO -->
-            <!--<div class="help-line">-->
-              <!--<div class="help-wrapper">-->
-                <!--<a href="/forgot">忘记密码？</a>-->
-              <!--</div>-->
-            <!--</div>-->
+            <div class="help-line">
+              <div class="help-wrapper">
+                <a href="/forgot">忘记密码？</a>
+              </div>
+            </div>
             <div class="error-line" v-if="isShowError">
               <div class="error-wrapper">
                 <i class="fa fa-exclamation-circle"></i> <span>{{errorMessage}}</span>
@@ -97,7 +96,7 @@ export default {
     },
     login: function () {
       if (this.validate()) {
-        let data = {
+        let params = {
           username: this.username,
           password: this.password
         }
@@ -106,7 +105,7 @@ export default {
           headers: {
             'content-type': 'application/json'
           },
-          body: JSON.stringify(data)
+          body: JSON.stringify(params)
         }).then(res => res.json())
           .then(data => {
             if (data.status === 200) {
@@ -118,8 +117,8 @@ export default {
               this.errorMessage = data.message || ERROR_MESSAGE.loginInvalid
             }
           })
-          .catch((e) => {
-            console.log(e)
+          .catch((err) => {
+            console.log(err)
           })
       }
     }

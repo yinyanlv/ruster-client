@@ -72,8 +72,12 @@ a {
   min-width: 98rem;
   max-width: 150rem;
   margin: 0 auto;
-  display: table;
-  table-layout: fixed;
+
+  & > section {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+  }
 
   &:after {
     content: '';
@@ -297,11 +301,11 @@ a {
       z-index: 80;
 
       .v-note-op {
-        border-color: $lighter-bd-color !important;
+        border-color: $bd-color !important;
       }
 
       .v-note-panel {
-        border-color: $lighter-bd-color !important;
+        border-color: $bd-color !important;
       }
 
       .auto-textarea-input {
@@ -523,9 +527,13 @@ a {
 
   .frame-wrapper {
     width: 100%;
-    display: block;
     min-width: 32rem;
     max-width: 76.8rem;
+
+    & > section {
+      width: 100%;
+      display: block;
+    }
   }
 
   .topic {

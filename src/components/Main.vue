@@ -3,10 +3,10 @@
     <div class="frame-wrapper">
       <!-- 手机端搜索框 -->
       <div class="m-search">
-        <form class="search" method="get" action="">
+        <div class="search">
           <input class="input-search" type="search" name="keyword" placeholder="请输入关键字" value="">
           <a class="btn btn-search" href="javascript:;"><i class="fa fa-search"></i></a>
-        </form>
+        </div>
       </div>
       <slot></slot>
     </div>
