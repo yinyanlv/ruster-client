@@ -6,10 +6,10 @@
         <h4>话题推荐</h4>
       </div>
       <div class="panel-content">
-        <ul v-if="newBest.length > 0" class="info-list limit-text">
+        <ul v-if="newBest && newBest.length > 0" class="info-list limit-text">
           <li><a href="todo">todo</a></li>
         </ul>
-        <div v-if="newBest.length === 0"  class="no-data">暂无推荐的话题</div>
+        <div v-if="newBest && newBest.length === 0"  class="no-data">暂无推荐的话题</div>
       </div>
     </div>
 
