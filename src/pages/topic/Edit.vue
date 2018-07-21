@@ -39,9 +39,10 @@ import {mavonEditor} from 'mavon-editor'
 import Aside from '../../components/Aside'
 import Crumbs from '../../components/Crumbs'
 import config from '../../config'
+import storage from '../../utils/storage'
 
 export default {
-  name: 'page-topic-edit',
+  name: 'PageTopicEdit',
   components: {
     'app-crumbs': Crumbs,
     'app-aside': Aside,
@@ -59,9 +60,8 @@ export default {
     }
   },
   mounted: function () {
-    let user = JSON.parse(localStorage.getItem('user'))
-    this.username = user ? user.username : ''
-    this.userId = user ? user.id : ''
+    this.username = storage.getUserName()
+    this.userId = storage.getUserId()
     this.loadCategories()
   },
   methods: {

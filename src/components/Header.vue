@@ -3,12 +3,12 @@
     <header class="frame-header">
       <div class="frame-wrapper">
         <div class="header-left">
-          <a class="logo" href="/"><img src="../assets/images/logo.png"><span class="site-name">Ruster</span></a>
+          <router-link class="logo" :to="{path: '/'}"><img src="../assets/images/logo.png"><span class="site-name">Ruster</span></router-link>
           <nav>
-            <a href="/" class="active">首页</a>
+            <router-link class="active" :to="{path: '/'}">首页</router-link>
             <!-- TODO -->
-            <!--<a href="/wiki">Wiki</a>-->
-            <!--<a href="/explore">Explore</a>-->
+            <router-link :to="{path: '/wiki'}">Wiki</router-link>
+            <router-link :to="{path: '/explore'}">Explore</router-link>
           </nav>
         </div>
         <div class="header-right">
@@ -17,11 +17,11 @@
             <a class="btn btn-search" href="javascript:;"><i class="fa fa-search"></i></a>
           </div>
           <nav>
-            <a href="/create-topic">发布话题</a>
-            <a href="/user/admin">admin</a>
-            <a href="/logout">退出</a>
-            <a href="/register">注册</a>
-            <a href="/login">登录</a>
+            <router-link v-if="isLogined" :to="{path: '/create-topic'}">发布话题</router-link>
+            <router-link v-if="isLogined" :to="{path: '/user/' + username}">{{username}}</router-link>
+            <a v-if="isLogined" href="javascript:;" @click="logout">退出</a>
+            <router-link v-if="!isLogined" :to="{path: '/register'}">注册</router-link>
+            <router-link v-if="!isLogined" :to="{path: '/login'}">登录</router-link>
           </nav>
         </div>
       </div>
@@ -30,27 +30,47 @@
     <header class="m-frame-header">
       <a href="javascript:;" class="btn btn-menu"><i class="fa fa-navicon"></i></a>
       <div class="box-btns">
-        <a class="btn" href="todo/create-topic">发布话题</a>
-        <a class="btn" href="todo/register">注册</a>
-        <a class="btn" href="todo/login">登录</a>
+        <router-link v-if="isLogined" class="btn" :to="{path: '/create-topic'}">发布话题</router-link>
+        <router-link v-if="!isLogined" class="btn" :to="{path: '/register'}">注册</router-link>
+        <router-link v-if="!isLogined" class="btn" :to="{path: '/login'}">登录</router-link>
       </div>
       <div class="title">
-        <a href="todo"><img src="../assets/images/logo.png"></a>
+        <router-link :to="{path: '/'}"><img src="../assets/images/logo.png"></router-link>
       </div>
     </header>
 
     <div class="m-nav-bg"></div>
     <nav class="m-nav">
-      <a href="todo"><span class="icon"><i class="fa fa-home"></i></span> 首页</a>
-      <a href="todo/resource"><span class="icon"><i class="fa fa-file-text"></i></span> 资源</a>
-      <a href="todo/user/"><span class="icon"><i class="fa fa-user-circle"></i></span> 用户中心</a>
-      <a href="todo/logout"><span class="icon"><i class="fa fa-sign-out"></i></span> 退出</a>
+      <router-link :to="{path: '/'}"><span class="icon"><i class="fa fa-home"></i></span> 首页</router-link>
+      <router-link v-if="isLogined" :to="{path: '/user/' + username}"><span class="icon"><i class="fa fa-user-circle"></i></span> 用户中心</router-link>
+      <a href="javascript:;" v-if="isLogined" @click="logout"><span class="icon"><i class="fa fa-sign-out"></i></span> 退出</a>
     </nav>
   </section>
 </template>
 <script>
+import storage from '../utils/storage'
+
 export default {
-  name: 'app-header'
+  name: 'AppHeader',
+  data: function () {
+    return {
+      isLogined: false,
+      userId: '',
+      username: ''
+    }
+  },
+  mounted: function () {
+    this.isLogined = storage.isLogined()
+    this.userId = storage.getUserId()
+    this.username = storage.getUserName()
+  },
+  methods: {
+    logout: function () {
+      storage.removeToken()
+      storage.removeUser()
+      this.$router.push('/')
+    }
+  }
 }
 </script>
 <style lang="scss">

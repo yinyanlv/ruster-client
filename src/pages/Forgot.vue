@@ -33,7 +33,7 @@ import Aside from '../components/Aside'
 import Crumbs from '../components/Crumbs'
 
 export default {
-  name: 'page-forgot',
+  name: 'PageForgot',
   components: {
     'app-crumbs': Crumbs,
     'app-aside': Aside

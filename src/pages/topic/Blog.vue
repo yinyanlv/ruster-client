@@ -3,25 +3,26 @@
     <div class="block-main">
       <div class="panel">
         <article class="article">
-          <div class="article-header">
+          <div class="article-header blog-header">
             <div class="title">
-              <span class="tag" v-if="topicCategory==='office'">官方</span>
               <h3>{{topic.title}}</h3>
             </div>
-            <div class="info">
-              <span class="item">• 版块 <span class="tag tag-category">{{topicCategoryName}}</span></span>
-              <span class="item">• 作者 <router-link :to="{path: '/user/' + topicUser.username}">{{topicUser.username}}</router-link></span>
-              <span class="item">• 发布于 <span class="datetime-ago">{{topicRtime}}</span></span>
-              <span class="item">• {{topic.commentCount}} 个回复</span>
-              <span class="item">• {{topic.viewCount}} 次浏览</span>
-            </div>
-            <div class="operator operator-topic">
-              <div>
-                <!-- TODO -->
-                <!--<span class="btn btn-edit"><i class="fa fa-edit"></i> 编辑</span>-->
-                <!--<span class="btn btn-delete"><i class="fa fa-trash"></i> 删除</span>-->
-                <!--<span class="btn btn-collect"><i class="fa fa-star"></i><span class="text">已收藏</span></span>-->
-                <!--<span class="btn btn-collect"><i class="fa fa fa-star-o"></i><span class="text">收藏</span></span>-->
+            <div class="bottom-line">
+              <div class="info">
+                <span class="item">• 版块 <span class="tag tag-category">{{topicCategoryName}}</span></span>
+                <span class="item">• 作者 <router-link :to="{path: '/user/' + topicUser.username}">{{topicUser.username}}</router-link></span>
+                <span class="item">• 发布于 <span class="datetime-ago">{{topicRtime}}</span></span>
+                <span class="item">• {{topic.commentCount}} 个回复</span>
+                <span class="item">• {{topic.viewCount}} 次浏览</span>
+              </div>
+              <div class="operator operator-topic">
+                <div>
+                  <!-- TODO -->
+                  <!--<span class="btn btn-edit"><i class="fa fa-edit"></i> 编辑</span>-->
+                  <!--<span class="btn btn-delete"><i class="fa fa-trash"></i> 删除</span>-->
+                  <span class="btn btn-collect"><i class="fa fa-star"></i><span class="text">已收藏</span></span>
+                  <span class="btn btn-collect"><i class="fa fa fa-star-o"></i><span class="text">收藏</span></span>
+                </div>
               </div>
             </div>
           </div>
@@ -81,9 +82,8 @@
           </div>
         </div>
       </div>
-      <div class="panel guide-login" v-if="!isLogined">请先登录再发表评论。<router-link :to="{path: '/login'}">登录</router-link></div>
+      <div v-if="!isLogined" class="panel guide-login">请先登录再发表评论。<router-link :to="{path: '/login'}">登录</router-link></div>
     </div>
-    <app-aside></app-aside>
   </section>
 </template>
 <script>
@@ -94,7 +94,7 @@ import config from '../../config'
 import storage from '../../utils/storage'
 
 export default {
-  name: 'PageTopicDetail',
+  name: 'PageTopicBlog',
   components: {
     'app-aside': Aside,
     'mavon-editor': mavonEditor
@@ -168,4 +168,79 @@ export default {
 }
 </script>
 <style lang="scss">
+@import "../../assets/styles/scss/sdk/index";
+.blog-header {
+  background: $blog-header-bg-color !important;
+
+  .title{
+    margin: 10rem;
+    text-align: center;
+
+    h3 {
+      font-size: 3rem;
+      line-height: 3.6rem;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+
+  .bottom-line {
+    overflow: hidden;
+    height: 2rem;
+    line-height: 2rem;
+
+    & > div {
+      height: 100%;
+      line-height: 100%;
+    }
+
+    .info{
+      float:left;
+      color: $font-color !important;
+
+      .item{
+        vertical-align: middle;
+      }
+    }
+
+    .operator{
+      float:right;
+      margin-top: 0;
+
+      span{
+        color: $blog-header-font-color;
+      }
+    }
+  }
+
+  .tag-category{
+    color:  $font-color !important;
+    background: #eee;
+  }
+}
+
+@include mobile() {
+  .blog-header {
+    background: $blog-header-bg-color !important;
+
+    .title{
+      margin: 5rem 0 !important;
+
+      h3 {
+        font-size: 3rem;
+        line-height: 3.6rem;
+        font-weight: bold;
+        text-align: center;
+      }
+    }
+
+    .bottom-line{
+      height: auto;
+    }
+
+    .operator{
+      margin-top: 1rem !important;
+    }
+  }
+}
 </style>

@@ -50,7 +50,7 @@ import {ERROR_MESSAGE} from '../utils/message'
 import config from '../config'
 
 export default {
-  name: 'page-register',
+  name: 'PageRegister',
   components: {
     'app-crumbs': Crumbs,
     'app-aside': Aside

@@ -1,17 +1,17 @@
 <template>
   <div class="pagination">
-    <a class="first" :class="{disabled: pagination.isFirstPageDisabled}" :href="pagination.baseUrl + '/' + pagination.firstPage">«</a>
+    <router-link class="first" :class="{disabled: pagination.isFirstPageDisabled}" :to="{path: pagination.baseUrl + '/' + pagination.firstPage}">«</router-link>
     <a class="ellipsis" v-if="pagination.isShowPrevEllipsis">...</a>
-    <a v-for="item in pagination.pageList" :key="item.page" :href="pagination.baseUrl + '/' + item.page" :class="{active: item.isActive, disabled: item.isActive}">{{item.page}}</a>
+    <router-link v-for="item in pagination.pageList" :key="item.page" :to="{path: pagination.baseUrl + '/' + item.page}" :class="{active: item.isActive, disabled: item.isActive}">{{item.page}}</router-link>
     <a v-if="pagination.isShowNextEllipsis" class="ellipsis">...</a>
-    <a class="last" :class="{disabled: pagination.isLastPageDisabled}" :href="pagination.baseUrl + '/' + pagination.lastPage">»</a>
+    <router-link class="last" :class="{disabled: pagination.isLastPageDisabled}" :to="{path: pagination.baseUrl + '/' + pagination.lastPage}">»</router-link>
   </div>
 </template>
 <script>
 const RECORDS_COUNT_PER_PAGE = 7
 
 export default {
-  name: 'app-pagination',
+  name: 'AppPagination',
   props: {
     currentPage: {
       type: Number,

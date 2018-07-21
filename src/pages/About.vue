@@ -24,7 +24,7 @@ import Aside from '../components/Aside'
 import Crumbs from '../components/Crumbs'
 
 export default {
-  name: 'page-about',
+  name: 'PageAbout',
   components: {
     'app-crumbs': Crumbs,
     'app-aside': Aside

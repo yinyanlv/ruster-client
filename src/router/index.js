@@ -8,8 +8,9 @@ import Register from '../pages/Register'
 import Forgot from '../pages/Forgot'
 import Home from '../pages/Home'
 import TopicDetail from '../pages/topic/Detail'
+import TopicBlog from '../pages/topic/Blog'
 import TopicEdit from '../pages/topic/Edit'
-import UserDetail from '../pages/user/Detail'
+import UserInfo from '../pages/user/Info'
 import UserEdit from '../pages/user/Edit'
 import UserChangePassword from '../pages/user/ChangePassword'
 import Wiki from '../pages/Wiki'
@@ -40,6 +41,9 @@ export default new Router({
       path: '/topic/:id',
       component: TopicDetail
     }, {
+      path: '/blog/:id',
+      component: TopicBlog
+    }, {
       path: '/create-topic',
       component: TopicEdit
     }, {
@@ -47,7 +51,7 @@ export default new Router({
       component: TopicEdit
     }, {
       path: '/user/:id',
-      component: UserDetail
+      component: UserInfo
     }, {
       path: '/user/edit/:id',
       component: UserEdit

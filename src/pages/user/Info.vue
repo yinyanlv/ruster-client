@@ -7,13 +7,14 @@
         </div>
         <ul>
           <li><span class="label">用户名：</span><div class="text">admin</div></li>
-          <li><span class="label">GitHub账号：</span><div class="text"><a href="https://github.com/11" target="_blank" rel="nofollow">admin</a></div></li>
           <li><span class="label">邮箱：</span><div class="text"><a href="mailto:admin">admin</a></div></li>
-          <li><span class="label">注册时间：</span><div class="text datetime-ago" data-datetime="admin"></div></li>
+          <li><span class="label">GitHub账号：</span><div class="text"><a href="https://github.com/11" target="_blank" rel="nofollow">admin</a></div></li>
+          <li><span class="label">注册时间：</span><div class="text datetime-ago"></div></li>
+          <li><span class="label">注册排名：</span><div class="text datetime-ago"></div></li>
           <li>
             <div class="btn-line">
-              <a class="btn btn-primary" href="/user/edit/admin">编辑个人资料</a>
-              <a class="btn btn-primary" href="/user/change-password/admin">修改密码</a>
+              <router-link class="btn btn-primary" :to="{path: '/user/edit/admin'}">编辑个人资料</router-link>
+              <router-link class="btn btn-primary" :to="{path: '/user/change-password/admin'}">修改密码</router-link>
             </div>
           </li>
         </ul>
@@ -21,9 +22,9 @@
     </div>
     <div class="topics-wrapper">
       <div class="tabs">
-        <span><a href="#" class="active">话题</a></span>
-        <span><a href="#">评论</a></span>
-        <span><a href="#">收藏</a></span>
+        <span><router-link :to="{path: ''}" class="active">话题</router-link></span>
+        <span><router-link :to="{path: ''}">评论</router-link></span>
+        <span><router-link :to="{path: ''}">收藏</router-link></span>
       </div>
       <div class="topics">
         <div class="no-data">暂无数据</div>
@@ -33,7 +34,7 @@
 </template>
 <script>
 export default {
-  name: 'page-user-detail'
+  name: 'PageUserInfo'
 }
 </script>
 

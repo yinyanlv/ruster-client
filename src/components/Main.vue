@@ -1,5 +1,5 @@
 <template>
-  <section class="frame-content" id="app-main">
+  <section class="frame-content">
     <div class="frame-wrapper">
       <!-- 手机端搜索框 -->
       <div class="m-search">
@@ -14,7 +14,7 @@
 </template>
 <script>
 export default {
-  name: 'app-main'
+  name: 'AppMain'
 }
 </script>
 <style lang="scss">

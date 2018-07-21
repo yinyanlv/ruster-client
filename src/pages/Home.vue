@@ -4,32 +4,32 @@
       <div class="panel">
         <div class="panel-header">
           <div class="tabs">
-            <a v-bind:href="'/topics/' + item.categoryName" v-for="(item, index) in categories" :key="index">{{item.categoryNameCn}}</a>
+            <router-link :to="{path: '/topics/' + item.categoryName}" v-for="(item, index) in categories" :key="index">{{item.categoryNameCn}}</router-link>
           </div>
         </div>
         <div class="panel-content">
           <div v-for="(topic, index) in topics" :key="index" class="topic">
             <div class="avatar">
-              <a v-bind:href="'/user/' + topic.username"><img src="/static/images/avatar.jpg"></a>
+              <router-link :to="{path: '/user/' + topic.username}"><img src="/static/images/avatar.jpg"></router-link>
             </div>
             <div class="info">
               <dl>
                 <dt>
                   <span class="tag tag-category">{{topic.categoryNameCn}}</span>
-                  <a v-if="topic.categoryName === 'blog'" :href="'/blog/' + topic.id">{{topic.title}}</a>
-                  <a v-else :href="'/topic/' + topic.id">{{topic.title}}</a>
+                  <router-link v-if="topic.categoryName === 'blog'" :to="{path: '/blog/' + topic.id}">{{topic.title}}</router-link>
+                  <router-link v-else :to="{path: '/topic/' + topic.id}">{{topic.title}}</router-link>
                 </dt>
                 <dd>
-                  <span class="item"><a :href="'/user/' + topic.user_id">{{topic.username}}</a>
+                  <span class="item"><router-link :to="{path: '/user/' + topic.userId}">{{topic.username}}</router-link>
                   发布于 <span class="datetime-ago">{{topic.rtime}}</span></span>
                   <span class="item">• <i class="reply-count">{{topic.commentCount}}</i> 个回复</span>
                   <span class="item">• <i class="view-count">{{topic.viewCount}}</i> 次浏览</span>
 
                   <!-- TODO 最后一个回复该问题的人 -->
-                  <!--<span class="item right">最后由 <a href="/static/images/avatar.jpg">-->
-                    <!--<img src="/static/images/avatar.jpg"> username</a> 回复于-->
-                    <!--<span class="datetime-ago">5 个月前</span>-->
-                  <!--</span>-->
+                  <span class="item right">最后由 <router-link :to="{path: ''}">
+                    <img src="/static/images/avatar.jpg"> username</router-link> 回复于
+                    <span class="datetime-ago">5 个月前</span>
+                  </span>
                 </dd>
               </dl>
             </div>
@@ -48,12 +48,12 @@
   </section>
 </template>
 <script>
-import config from '../config'
 import Aside from '../components/Aside'
 import Pagination from '../components/Pagination'
+import config from '../config'
 
 export default {
-  name: 'page-home',
+  name: 'PageHome',
   components: {
     'app-aside': Aside,
     'app-pagination': Pagination
@@ -69,9 +69,6 @@ export default {
     }
   },
   mounted: function () {
-    let user = JSON.parse(localStorage.getItem('user'))
-    this.username = user ? user.username : ''
-    this.userId = user ? user.id : ''
     this.loadTopics()
   },
   methods: {

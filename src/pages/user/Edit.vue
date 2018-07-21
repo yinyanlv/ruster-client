@@ -40,7 +40,7 @@
 
 <script>
 export default {
-  name: 'page-user-edit'
+  name: 'PageUserEdit'
 }
 </script>
 

@@ -40,7 +40,7 @@
 
 <script>
 export default {
-  name: 'app-change-password'
+  name: 'AppChangePassword'
 }
 </script>
 

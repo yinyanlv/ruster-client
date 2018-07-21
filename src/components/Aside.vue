@@ -1,5 +1,5 @@
 <template>
-  <aside class="block-aside" id="app-aside">
+  <aside class="block-aside">
 
     <div class="panel">
       <div class="panel-header">
@@ -8,7 +8,7 @@
       <div class="panel-content">
         <!-- TODO -->
         <!--<ul class="info-list limit-text">-->
-          <!--<li><a href="#">title</a></li>-->
+          <!--<li><router-link :to="{path: ''}">title</router-link></li>-->
         <!--</ul>-->
         <div class="no-data">暂无推荐的话题</div>
       </div>
@@ -58,13 +58,12 @@
         </ul>
       </div>
     </div>
-
   </aside>
 </template>
 <script>
 import config from '../config'
 export default {
-  name: 'app-aside',
+  name: 'AppAside',
   mounted: function () {
     this.loadSiteInfo()
   },

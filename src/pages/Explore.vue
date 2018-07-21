@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'page-explore'
+  name: 'PageExplore'
 }
 </script>
 

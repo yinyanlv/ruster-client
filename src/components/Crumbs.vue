@@ -1,13 +1,13 @@
 <template>
-  <div class="crumbs" id="app-crumbs">
-    <a href="/">首页</a>
+  <div class="crumbs">
+    <router-link :to="{path: '/'}">首页</router-link>
     <span class="divider">/</span>
     <span class="current">{{text}}</span>
   </div>
 </template>
 <script>
 export default {
-  name: 'app-crumbs',
+  name: 'AppCrumbs',
   props: {
     text: {
       required: true

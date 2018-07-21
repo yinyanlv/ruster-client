@@ -1,8 +1,8 @@
 <template>
-  <footer class="frame-footer" id="app-footer">
+  <footer class="frame-footer">
     <div class="frame-wrapper">
       <div class="links">
-        <a href="/about">关于本站</a>
+        <router-link :to="{path: '/about'}">关于本站</router-link>
         <a href="https://github.com/ruster-xyz/ruster.git" target="_blank" rel="nofollow">本站源码地址</a>
       </div>
       <div class="site-info">Ruster，一个 Rust 语言的中文社区，致力于 Rust 的技术研究与发展。</div>
@@ -11,7 +11,7 @@
 </template>
 <script>
 export default {
-  name: 'app-footer'
+  name: 'AppFooter'
 }
 </script>
 <style lang="scss">

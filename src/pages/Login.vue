@@ -17,7 +17,7 @@
             </div>
             <div class="help-line">
               <div class="help-wrapper">
-                <a href="/forgot">忘记密码？</a>
+                <router-link :to="{path: '/forgot'}">忘记密码？</router-link>
               </div>
             </div>
             <div class="error-line" v-if="isShowError">
@@ -45,9 +45,10 @@ import Crumbs from '../components/Crumbs'
 import {USERNAME_REG, PASSWORD_REG} from '../utils/regex'
 import {ERROR_MESSAGE} from '../utils/message'
 import config from '../config'
+import storage from '../utils/storage'
 
 export default {
-  name: 'page-login',
+  name: 'PageLogin',
   components: {
     'app-crumbs': Crumbs,
     'app-aside': Aside
@@ -109,8 +110,8 @@ export default {
         }).then(res => res.json())
           .then(data => {
             if (data.status === 200) {
-              localStorage.setItem('token', data.token)
-              localStorage.setItem('user', JSON.stringify(data.signinUser))
+              storage.setToken(data.token)
+              storage.setUser(data.signinUser)
               this.$router.push('/')
             } else {
               this.isShowError = true
